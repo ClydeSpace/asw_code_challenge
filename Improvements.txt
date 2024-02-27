@@ -1,0 +1,3 @@
+-I2C read and write operations can be improved to be asynchronous.
+-To allow for runtime configuration of parameters such as clock frequency, bus speed, and retry mechanisms 
+in the I2C driver, can introduce functions or APIs that enable dynamic adjustment of these parameters
