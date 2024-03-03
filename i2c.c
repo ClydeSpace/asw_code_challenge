@@ -81,7 +81,7 @@ status_t get_full_scale_configuration()
  */
 status_t get_output_data_rate()
 {
-    char buffer[1];
+    uint8_t buffer[1];
     status_t res = i2c_read(BUS_NO, CTRL_REG1, 1, buffer);
 
     if (res == STATUS_OK) {
@@ -139,7 +139,7 @@ status_t set_output_data_rate(float rate)
         return STATUS_ERROR;
     }
 
-    char buffer[1];
+    uint8_t buffer[1];
     status_t res = i2c_read(BUS_NO, CTRL_REG1, 1, buffer);
 
     if (res == STATUS_OK) {
@@ -159,7 +159,7 @@ status_t set_output_data_rate(float rate)
  */
 status_t enable_irq()
 {
-    char buffer[1];
+    uint8_t buffer[1];
     status_t res = i2c_read(BUS_NO, INT_CFG, 1, buffer);
 
     if (res == STATUS_OK) {
@@ -180,7 +180,7 @@ status_t enable_irq()
  */
 status_t disable_irq()
 {
-    char buffer[1];
+    uint8_t buffer[1];
     status_t res = i2c_read(BUS_NO, INT_CFG, 1, buffer);
 
     if (res == STATUS_OK) {
