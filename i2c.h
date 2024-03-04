@@ -2,22 +2,22 @@
 #define I2C_HEADER_H
 
 #include <stdint.h>
+#include "comm_interface.h"
 
-typedef enum {
-    STATUS_OK,
-    STATUS_ERROR
-} status_t;
+#define LIS3MDL_ADDRESS 0x1E // I2C address of the LIS3MDLTR sensor
 
-status_t i2c_read(
+
+comm_status_t i2c_read(
     uint8_t bus_address,
     uint8_t register_address,
     uint16_t length,
     uint8_t *buffer);
 
-status_t i2c_write(
+comm_status_t i2c_write(
     uint8_t bus_address,
     uint8_t register_address,
     uint16_t length,
     uint8_t *buffer);
-
+    
+comm_status_t i2c_init(void);
 #endif

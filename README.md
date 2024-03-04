@@ -29,6 +29,16 @@ This is not a closed book assessment.
 
 ## Extra Thoughts
 If you have time, answer the following questions:
-- What changes you would make to this interfaces for use in an RTOS
-environment?
-- How might the I2C API be improved
+
+- **Changes to Interfaces for Use in an RTOS Environment**:
+    - The modifications to these interfaces depend completely on the application.
+    - Adding mutexes or semaphores to protect resource access.
+    - Removing busy waiting with OS sleep or callback mechanisms.
+    - Implementing dedicated task and priority management.
+    - In applications where the aforementioned aspects are unnecessary, the current implementation can be reused directly.
+
+- **Improvements to the I2C API**:
+    - Adding error logging and reporting.
+    - Incorporating timeout functionality.
+    - Integrating mutex functionality at the I2C level, depending on the OS architecture.
+
